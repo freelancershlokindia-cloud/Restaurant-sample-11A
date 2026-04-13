@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin | Sample Restaurant</title>
+    <link rel="stylesheet" href="style.css">
+    
+    <script>
+        const session = JSON.parse(localStorage.getItem('activeSession'));
+        if (!session || session.role !== 'admin') {
+            alert("🛑 ACCESS DENIED! You must be logged in as an Admin to view this page.");
+            window.location.href = 'login.html';
+        }
+    </script>
+</head>
+<body>
+    <div class="preloader" id="preloader"><div class="loader-content"><h2>SAMPLE RESTAURANT</h2><div class="spinner"></div></div></div>
+    
+    <nav>
+        <div class="logo">ADMIN PANEL</div>
+        <div class="nav-actions">
+            <a href="index.html" class="btn btn-outline">Exit Admin</a>
+            <button class="theme-toggle" id="theme-btn">🌗</button>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h2>Dashboard Management</h2>
+        <div class="grid">
+            <div class="card" style="padding: 20px;">
+                <h3>Add New Menu Item</h3>
+                <form onsubmit="alert('Item added successfully! (Simulated)'); event.preventDefault();">
+                    <div class="form-group"><label>Item Name</label><input type="text" class="form-control" required></div>
+                    <div class="form-group"><label>Price (₹)</label><input type="number" class="form-control" required></div>
+                    <div class="form-group"><label>Image URL</label><input type="url" class="form-control" required></div>
+                    <button type="submit" class="btn">Add to Menu</button>
+                </form>
+            </div>
+            
+            <div class="card" style="padding: 20px;">
+                <h3>Quick Actions</h3>
+                <br>
+                <button class="btn btn-outline" style="width: 100%; margin-bottom: 10px;" onclick="alert('Prices Updated!')">Manage Prices</button>
+                <button class="btn btn-outline" style="width: 100%; margin-bottom: 10px;" onclick="alert('Offers Updated!')">Update Offers</button>
+                <button class="btn btn-outline" style="width: 100%;" onclick="alert('Event Published!')">Publish Event</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

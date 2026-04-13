@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu | Sample Restaurant</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="preloader" id="preloader"><div class="loader-content"><h2>SAMPLE RESTAURANT</h2><div class="spinner"></div></div></div>
+
+    <nav>
+        <div class="logo">SAMPLE RESTAURANT</div>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="menu.html">Menu</a>
+            <a href="offers.html">Offers</a>
+            <a href="events.html">Events</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+        </div>
+        <div class="nav-actions">
+            <button class="theme-toggle" id="theme-btn">🌗</button>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h2>Our Exquisite Menu</h2>
+        
+        <div class="text-center" style="margin-bottom: 30px;">
+            <button class="btn btn-outline" onclick="renderMenu('all')">All</button>
+            <button class="btn btn-outline" onclick="renderMenu('veg')">Veg</button>
+            <button class="btn btn-outline" onclick="renderMenu('non-veg')">Non-Veg</button>
+            <button class="btn btn-outline" onclick="renderMenu('burgers')">Burgers</button>
+            <button class="btn btn-outline" onclick="renderMenu('thali')">Thali</button>
+            <button class="btn btn-outline" onclick="renderMenu('drinks')">Drinks</button>
+        </div>
+
+        <div class="grid" id="menu-grid"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
